@@ -1,6 +1,7 @@
 # `markdown-decorator`
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Codacy Badge][codacy-image]][codacy-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![License][license-image]][license-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Windows build status][appveyor-image]][appveyor-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Codacy Badge][codacy-image]][codacy-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![License][license-image]][license-url]
+
 > A lightweight utility for inserting text into markdown files and templates.
 
 ## Table of contents
@@ -150,8 +151,14 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 
 [![License][license-image]][license-url] © [Greg Swindle](https://github.com/gregswindle)
 
+---
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/gregswindle/markdown-decorator.svg)](https://greenkeeper.io/)
 
 
+
+[appveyor-image]: https://ci.appveyor.com/api/projects/status/fr4s80kngal87oa7/branch/master?svg=true
+[appveyor-url]: https://ci.appveyor.com/project/gregswindle/markdown-decorator/branch/master
 [codacy-image]: https://api.codacy.com/project/badge/Grade/be8fc7f9a20f4e178c4fa067a4aad7c7
 [codacy-url]: https://www.codacy.com/app/greg_7/markdown-decorator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/markdown-decorator&amp;utm_campaign=Badge_Grade
 [code-of-conduct-url]: ./.github/CODE_OF_CONDUCT.md
