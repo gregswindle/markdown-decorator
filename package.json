@@ -38,7 +38,7 @@
     "standard-version": "^4.2.0"
   },
   "scripts": {
-    "lint": "eslint -c .eslintrc.yml lib/__tests__/*.test.js -f table --fix",
+    "lint": "node_modules/.bin/eslint -c .eslintrc.yml lib/__tests__/*.test.js -f table --fix",
     "test": "jest --config=jest.config.json",
     "prepublish": "nsp check",
     "pretest": "npm run lint",
