@@ -5,9 +5,10 @@
   "homepage": "https://github.com/gregswindle/markdown-decorator#readme",
   "author": "Greg Swindle",
   "files": [
-    "lib"
+    "lib",
+    "markdown-toc"
   ],
-  "main": "index.js",
+  "main": "lib/markdown-decorator.js",
   "keywords": [
     "markdown",
     "toc",
@@ -15,6 +16,7 @@
     "templates"
   ],
   "devDependencies": {
+    "commitplease": "^2.7.10",
     "coveralls": "^2.13.1",
     "eslint": "^4.2.0",
     "eslint-config-xo-space": "^0.16.0",
@@ -32,14 +34,15 @@
     "eslint-plugin-xss": "^0.1.8",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
-    "markdown-toc": "^1.1.0",
-    "nsp": "^2.6.3"
+    "nsp": "^2.6.3",
+    "standard-version": "^4.2.0"
   },
   "scripts": {
-    "lint": "eslint -c .eslintrc.yml lib/__tests__/*.test.js -f table --fix",
+    "lint": "node_modules/.bin/eslint -c .eslintrc.yml lib/*.js -f table --fix",
     "test": "jest --config=jest.config.json",
-    "prepublish": "nsp check",
-    "pretest": "npm run lint"
+    "posttest": "nsp check",
+    "pretest": "npm run lint",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -58,5 +61,26 @@
   },
   "jest": {
     "testEnvironment": "node"
+  },
+  "commitplease": {
+    "style": "angular",
+    "types": [
+      "build",
+      "chore",
+      "ci",
+      "docs",
+      "feat",
+      "fix",
+      "perf",
+      "refactor",
+      "revert",
+      "style",
+      "test"
+    ],
+    "scope": "\\S+.*"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "markdown-toc": "^1.1.0"
   }
 }
