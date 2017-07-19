@@ -1,32 +1,38 @@
 # `markdown-decorator`
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![License][license-image]][license-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Codacy Badge][codacy-image]][codacy-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![License][license-image]][license-url]
 > A lightweight utility for inserting text into markdown files and templates.
 
-## 1. Table of contents
+## Table of contents
 
-- [1. Table of contents](#1-table-of-contents)
-- [2. Installation](#2-installation)
-- [3. Usage](#3-usage)
-	- [3.1. Pass a markdown string to its constructor](#31-pass-a-markdown-string-to-its-constructor)
-	- [3.2. Insert your product's (semantic) version](#32-insert-your-products-semantic-version)
-	- [3.3. Generate a table of contents](#33-generate-a-table-of-contents)
-	- [3.4. Method chaining](#34-method-chaining)
-	- [3.5. Templates](#35-templates)
-	- [3.6. Save the markdown to file](#36-save-the-markdown-to-file)
-- [4. Version and CHANGELOG](#4-version-and-changelog)
+<!-- toc -->
+
+- [1. Installation](#1-installation)
+- [2. Usage](#2-usage)
+  * [2.1. Pass a markdown string to its constructor](#21-pass-a-markdown-string-to-its-constructor)
+  * [2.2. Insert your product's (semantic) version](#22-insert-your-products-semantic-version)
+  * [2.3. Generate a table of contents](#23-generate-a-table-of-contents)
+  * [2.4. Method chaining](#24-method-chaining)
+  * [2.5. Templates](#25-templates)
+  * [2.6. Insert a string between delimiters](#26-insert-a-string-between-delimiters)
+- [3. Version and CHANGELOG](#3-version-and-changelog)
+- [4. Contributing](#4-contributing)
 - [5. License](#5-license)
 
+<!-- tocstop -->
 
-## 2. Installation
+<!-- tocend -->
+
+
+## 1. Installation
 
 ```sh
 $ npm install --save markdown-decorator
 ```
 
-## 3. Usage
+## 2. Usage
 
-### 3.1. Pass a markdown string to its constructor
+### 2.1. Pass a markdown string to its constructor
 
 ```js
 const MarkdownDecorator = require('markdown-decorator')
@@ -37,7 +43,7 @@ const decorator = new MarkdownDecorator(fs.readFileSync('README.md'))
 
 ```
 
-### 3.2. Insert your product's (semantic) version
+### 2.2. Insert your product's (semantic) version
 
 ```text
 ## Version and CHANGELOG
@@ -63,13 +69,12 @@ Inserts the semver:
 Please read the [CHANGELOG][changelog-url] for details.
 ```
 
-### 3.3. Generate a table of contents
+### 2.3. Generate a table of contents
 
 Use `toc` comment tags as delimiters:
 
 ```text
 ## Table of contents
-
 <!-- toc -->
 <!-- tocend -->
 ```
@@ -78,7 +83,7 @@ Use `toc` comment tags as delimiters:
 decorator.toc(markdown)
 ```
 
-### 3.4. Method chaining
+### 2.4. Method chaining
 
 ```js
 const md = decorator
@@ -87,7 +92,7 @@ const md = decorator
   .toString()
 ```
 
-### 3.5. Templates
+### 2.5. Templates
 
 ```text
 <%= header %>
@@ -110,23 +115,26 @@ const md = decorator.decorate({
 })
 ```
 
-### 3.6. Save the markdown to file  
+### 2.6. Insert a string between delimiters
 
-```js
-decorator.decorate({
-  version: '1.0.0'
-  template,
-  header: '# TEMPLATE HEADER',
-  body: decorator.markdown,
-  footer: 'TEMPLATE FOOTER'
-}).save('NOTICE.md')
+```text
+# `<!-- title --><!-- titleend -->`
 ```
 
-## 4. Version and CHANGELOG
+```js
+decorator.insert('markdown-decorator', {
+	open: 'title',
+	close: 'titleend'
+})
+decorator.markdown
+// => # `<!-- title -->markdown-decorator<!-- titleend -->`
+```
+
+## 3. Version and CHANGELOG
 
 `markdown-decorator` is at <!-- semver -->[`v1.0.0`](./CHANGELOG.md)<!-- semverend -->. Please see the [CHANGELOG](./CHANGELOG.md) for details.
 
-## 7. Contributing
+## 4. Contributing
 
 [![PRs Welcome][makeapullrequest-image]][makeapullrequest-url] We welcome contributors and pull requests. Check out the guidelines for
 
@@ -138,11 +146,15 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
  * [Peruse open issues][issues-url] or
  * [Open a new pull request (PR)][pr-url]
 
-## 6. License
+## 5. License
 
 [![License][license-image]][license-url] © [Greg Swindle](https://github.com/gregswindle)
 
-[code-of-conduct-url]: ./.gihub/CODE_OF_CONDUCT.md
+
+
+[codacy-image]: https://api.codacy.com/project/badge/Grade/be8fc7f9a20f4e178c4fa067a4aad7c7
+[codacy-url]: https://www.codacy.com/app/greg_7/markdown-decorator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gregswindle/markdown-decorator&amp;utm_campaign=Badge_Grade
+[code-of-conduct-url]: ./.github/CODE_OF_CONDUCT.md
 [coveralls-image]: https://coveralls.io/repos/gregswindle/markdown-decorator/badge.svg
 [coveralls-url]: https://coveralls.io/r/gregswindle/markdown-decorator
 [daviddm-image]: https://david-dm.org/gregswindle/markdown-decorator.svg?theme=shields.io
