@@ -1,5 +1,7 @@
 # `markdown-decorator`
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/gregswindle/markdown-decorator.svg)](https://greenkeeper.io/)
+
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![License][license-image]][license-url]
 > A lightweight utility for inserting text into markdown files and templates.
 
