@@ -142,7 +142,7 @@ Contributions are stories with a beginning, a middle, and an end, all told throu
 
 [![License][license-image]][license-url] © [Greg Swindle](https://github.com/gregswindle)
 
-[code-of-conduct-url]: ./.gihub/CODE_OF_CONDUCT.md
+[code-of-conduct-url]: ./.github/CODE_OF_CONDUCT.md
 [coveralls-image]: https://coveralls.io/repos/gregswindle/markdown-decorator/badge.svg
 [coveralls-url]: https://coveralls.io/r/gregswindle/markdown-decorator
 [daviddm-image]: https://david-dm.org/gregswindle/markdown-decorator.svg?theme=shields.io
